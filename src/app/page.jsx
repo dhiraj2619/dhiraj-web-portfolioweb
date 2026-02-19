@@ -1,5 +1,6 @@
-import HeroBanner from "./components/herobanner/HeroBanner";
 import Navbar from "./components/Navbar";
+import HeroSkillsReveal from "./components/skills/HeroSkillsReveal";
+import SkillsSection from "./components/skills/SkillsSection";
 
 const PortfolioPage = () => {
   return(
@@ -7,7 +8,11 @@ const PortfolioPage = () => {
        <Navbar/>
 
        <main>
-           <HeroBanner/>
+           <HeroSkillsReveal/>
+           <SkillsSection
+             eyebrow="Selected Work"
+             title="Projects and Case Studies"
+           />
        </main>
      </>
   )
