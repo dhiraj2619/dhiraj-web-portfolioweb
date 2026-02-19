@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-[#f7f6f2] antialiased`}
       >
         <SmoothScroll>
           {/* <Providers> */}

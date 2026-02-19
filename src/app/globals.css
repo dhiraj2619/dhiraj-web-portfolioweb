@@ -8,3 +8,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: "brokmann-font-light";
+  src: url("/assets/fonts/brockmann-regular.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+.font-brokmannlight {
+  font-family: "brokmann-font-light";
+}
+
+.bg-hero {
+  background: url("../../public/assets/images/banner/banner.png");
+}
