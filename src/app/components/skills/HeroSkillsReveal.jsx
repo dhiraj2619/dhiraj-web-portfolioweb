@@ -6,35 +6,35 @@ import HeroBanner from "../herobanner/HeroBanner";
 const Skills = [
   {
     id: 1,
-    skillImg: require("/assets/images/icons/html.svg"),
+    skillImg: "/assets/images/icons/html.svg",
   },
   {
     id: 2,
-    skillImg: require("/assets/images/icons/css.svg"),
+    skillImg: "/assets/images/icons/css.svg",
   },
   {
     id: 3,
-    skillImg: require("/assets/images/icons/javascript.svg"),
+    skillImg: "/assets/images/icons/javascript.svg",
   },
   {
     id: 4,
-    skillImg: require("/assets/images/icons/node-js.svg"),
+    skillImg: "/assets/images/icons/node-js.svg",
   },
   {
     id: 5,
-    skillImg: require("/assets/images/icons/react.svg"),
+    skillImg: "/assets/images/icons/react.svg",
   },
   {
     id: 6,
-    skillImg: require("/assets/images/icons/wordpress.svg"),
+    skillImg: "/assets/images/icons/wordpress.svg",
   },
   {
     id: 7,
-    skillImg: require("/assets/images/icons/mogodb.svg"),
+    skillImg: "/assets/images/icons/mongodb.svg",
   },
   {
     id: 8,
-    skillImg: require("/assets/images/icons/mysql.svg"),
+    skillImg: "/assets/images/icons/mysql.svg",
   },
 ];
 
@@ -95,11 +95,11 @@ const HeroSkillsReveal = () => {
       </div>
 
       <div className="relative mt-20">
-        <div className="max-w-7xl mx-auto border border-red-600">
-          <div className="grid grid-cols-6 gap-x-5">
+        <div className="max-w-8xl mx-auto px-10">
+          <div className="grid grid-cols-8 gap-x-5">
             {Skills.map((item, i) => (
-              <div className="card bg-white p-8 rounded-2xl">
-                <img src={item.skillImg} className="" alt={item.skillImg} />
+              <div className="bg-[#ffffff] p-8 h-[140px] w-full flex justify-center items-center rounded-2xl">
+                <img src={item.skillImg} className="h-20 w-auto" alt={item.skillImg} />
               </div>
             ))}
           </div>
