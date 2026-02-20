@@ -3,10 +3,39 @@
 import React, { useEffect, useRef, useState } from "react";
 import HeroBanner from "../herobanner/HeroBanner";
 
-const skillGroups = [
-  ["React", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS"],
-  ["Node.js", "Express", "REST APIs", "JWT", "Socket.IO"],
-  ["MongoDB", "PostgreSQL", "Redis", "Prisma", "Docker"],
+const Skills = [
+  {
+    id: 1,
+    skillImg: require("/assets/images/icons/html.svg"),
+  },
+  {
+    id: 2,
+    skillImg: require("/assets/images/icons/css.svg"),
+  },
+  {
+    id: 3,
+    skillImg: require("/assets/images/icons/javascript.svg"),
+  },
+  {
+    id: 4,
+    skillImg: require("/assets/images/icons/node-js.svg"),
+  },
+  {
+    id: 5,
+    skillImg: require("/assets/images/icons/react.svg"),
+  },
+  {
+    id: 6,
+    skillImg: require("/assets/images/icons/wordpress.svg"),
+  },
+  {
+    id: 7,
+    skillImg: require("/assets/images/icons/mogodb.svg"),
+  },
+  {
+    id: 8,
+    skillImg: require("/assets/images/icons/mysql.svg"),
+  },
 ];
 
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
@@ -53,7 +82,7 @@ const HeroSkillsReveal = () => {
   const skillsPullDown = -110 + revealProgress * 165;
 
   return (
-    <section ref={rootRef} className="relative bg-black pb-32">
+    <section ref={rootRef} className="">
       <div className="sticky top-0 z-30 pt-2">
         <HeroBanner
           className="transition-[transform] duration-150 ease-out"
@@ -65,38 +94,17 @@ const HeroSkillsReveal = () => {
         />
       </div>
 
-      <section
-        className="relative z-20 -mt-16 px-4 md:px-8"
-        style={{
-          transform: `translateY(${skillsPullDown}px)`,
-        }}
-      >
-        <div className="mx-auto max-w-6xl rounded-[28px] border border-zinc-800 bg-[#060606] p-6 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.8)]">
-          <div className="text-center">
-            <p className="text-zinc-400 uppercase tracking-[0.2em] text-xs md:text-sm">
-              Core Skills
-            </p>
-            <h2 className="mt-3 text-white text-3xl md:text-5xl font-semibold">
-              Crafting Fast, Reliable Products
-            </h2>
-          </div>
-
-          <div className="mt-8 md:mt-10 space-y-4">
-            {skillGroups.map((group, index) => (
-              <div key={`group-${index}`} className="flex flex-wrap gap-3 justify-center">
-                {group.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-zinc-700 bg-zinc-900/75 px-5 py-2.5 text-zinc-100 text-sm md:text-base"
-                  >
-                    {skill}
-                  </span>
-                ))}
+      <div className="relative mt-20">
+        <div className="max-w-7xl mx-auto border border-red-600">
+          <div className="grid grid-cols-6 gap-x-5">
+            {Skills.map((item, i) => (
+              <div className="card bg-white p-8 rounded-2xl">
+                <img src={item.skillImg} className="" alt={item.skillImg} />
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

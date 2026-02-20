@@ -9,10 +9,7 @@ const PortfolioPage = () => {
 
        <main>
            <HeroSkillsReveal/>
-           <SkillsSection
-             eyebrow="Selected Work"
-             title="Projects and Case Studies"
-           />
+        
        </main>
      </>
   )
