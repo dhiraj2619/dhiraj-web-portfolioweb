@@ -196,3 +196,9 @@ html {
     transform: translateY(0);
   }
 }
+
+.stroke-heading {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #da8161;
+}

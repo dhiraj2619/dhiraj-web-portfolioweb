@@ -2,11 +2,46 @@
 
 import React, { useEffect, useState } from "react";
 
-const navItems = ["About", "Services", "Projects", "Contact"];
-const overlayItems = ["Home", "About", "Services", "Projects", "Contact"];
+const navItems = [
+  { id: 1, linkName: "About", reachToSec: "#about" },
+  { id: 2, linkName: "Services", reachToSec: "#services" },
+  { id: 3, linkName: "Projects", reachToSec: "#projects" },
+  { id: 4, linkName: "Contact", reachToSec: "#contact" },
+];
+
+const overlayItems = [
+  { id: 1, linkName: "Home", reachToSec: "#home" },
+  { id: 2, linkName: "About", reachToSec: "#about" },
+  { id: 3, linkName: "Services", reachToSec: "#services" },
+  { id: 4, linkName: "Projects", reachToSec: "#projects" },
+  { id: 5, linkName: "Contact", reachToSec: "#contact" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNavClick = (event, reachToSec, shouldCloseMenu = false) => {
+    if (!reachToSec?.startsWith("#")) return;
+
+    const sectionId = reachToSec.slice(1);
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+
+    event.preventDefault();
+
+    const sectionTop =
+      targetSection.getBoundingClientRect().top + window.scrollY;
+    const offset = reachToSec === "#about" ? 700 : 0;
+
+    window.scrollTo({
+      top: sectionTop + offset,
+      behavior: "smooth",
+    });
+
+    if (shouldCloseMenu) {
+      setIsMenuOpen(false);
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -33,7 +68,7 @@ const Navbar = () => {
         >
           {navItems.map((item, index) => (
             <li
-              key={item}
+              key={item.id}
               className="relative"
               style={{
                 transition: "opacity 320ms ease, transform 320ms ease",
@@ -43,10 +78,11 @@ const Navbar = () => {
               }}
             >
               <a
-                href="#"
+                href={item.reachToSec}
+                onClick={(event) => handleNavClick(event, item.reachToSec)}
                 className="text-[16px] font-medium leading-none tracking-tight text-black"
               >
-                {item}
+                {item.linkName}
               </a>
             </li>
           ))}
@@ -85,7 +121,7 @@ const Navbar = () => {
           <ul className="flex flex-1 flex-col items-center justify-center gap-2 text-center">
             {overlayItems.map((item, index) => (
               <li
-                key={item}
+                key={item.id}
                 style={{
                   transition: "opacity 420ms ease, transform 420ms ease",
                   transitionDelay: isMenuOpen
@@ -98,11 +134,13 @@ const Navbar = () => {
                 }}
               >
                 <a
-                  href="#"
-                  onClick={() => setIsMenuOpen(false)}
+                  href={item.reachToSec}
+                  onClick={(event) =>
+                    handleNavClick(event, item.reachToSec, true)
+                  }
                   className="text-[45px] py-5 font-semibold font-brokmannlight leading-[0.95] tracking-tight text-black sm:text-[64px] md:text-[60px]"
                 >
-                  {item}
+                  {item.linkName}
                 </a>
               </li>
             ))}

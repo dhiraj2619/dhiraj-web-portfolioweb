@@ -65,11 +65,11 @@ const HeroSkillsReveal = () => {
         <div
           className="absolute inset-x-0 z-20 px-4 md:px-8"
           style={{
-            top: "50vh",
+            top: "45vh",
             transform: `translateY(${skillsPullDown}px)`,
           }}
         >
-          <div className="max-w-8xl mx-auto px-6">
+          <div className="max-w-8xl mx-auto px-6 mt-5" id="about">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-4">
                 <span className="text-[#4a4a4a] capitalize text-[16px]">
@@ -78,7 +78,7 @@ const HeroSkillsReveal = () => {
                 </span>
 
                 <h2 className="text-[#000] text-[96px] leading-[90px] font-brokmannsemibold my-5">
-                  About <br /> Me
+                  About <br /> <span className="stroke-heading">Me</span> 
                 </h2>
               </div>
               <div className="lg:col-span-8">
