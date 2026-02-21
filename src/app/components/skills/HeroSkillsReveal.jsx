@@ -3,17 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import HeroBanner from "../herobanner/HeroBanner";
 
-const Skills = [
-  { id: 1, skillImg: "/assets/images/icons/html.svg" },
-  { id: 2, skillImg: "/assets/images/icons/css.svg" },
-  { id: 3, skillImg: "/assets/images/icons/javascript.svg" },
-  { id: 4, skillImg: "/assets/images/icons/node-js.svg" },
-  { id: 5, skillImg: "/assets/images/icons/react.svg" },
-  { id: 6, skillImg: "/assets/images/icons/wordpress.svg" },
-  { id: 7, skillImg: "/assets/images/icons/mongodb.svg" },
-  { id: 8, skillImg: "/assets/images/icons/mysql.svg" },
-];
-
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 const HeroSkillsReveal = () => {
@@ -76,24 +65,39 @@ const HeroSkillsReveal = () => {
         <div
           className="absolute inset-x-0 z-20 px-4 md:px-8"
           style={{
-            top: "72vh",
+            top: "50vh",
             transform: `translateY(${skillsPullDown}px)`,
           }}
         >
-          <div className="max-w-8xl mx-auto px-2 md:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-5">
-              {Skills.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white p-5 md:p-8 h-[110px] md:h-[140px] w-full flex justify-center items-center rounded-2xl"
-                >
-                  <img
-                    src={item.skillImg}
-                    className="h-14 md:h-20 w-auto"
-                    alt={`skill-${item.id}`}
-                  />
-                </div>
-              ))}
+          <div className="max-w-8xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-4">
+                <span className="text-[#4a4a4a] capitalize text-[16px]">
+                  From vision to execution to results, I build products that
+                  perform.
+                </span>
+
+                <h2 className="text-[#000] text-[96px] leading-[90px] font-brokmannsemibold my-5">
+                  About <br /> Me
+                </h2>
+              </div>
+              <div className="lg:col-span-8">
+                <p className="text-[#1f1f1f] text-[18px] leading-[32px] max-w-[980px]">
+                  I am Dhiraj R. Bhirud, a software developer focused on
+                  building scalable UI interfaces and modern user experiences.
+                  With 3+ years of experience in the IT industry, I combine
+                  clean frontend engineering with practical product thinking to
+                  deliver reliable digital solutions.
+                </p>
+
+                <p className="text-[#1f1f1f] text-[18px] leading-[32px] max-w-[980px] mt-5">
+                  My core focus areas are modern web technologies, performance
+                  optimization, responsive design systems, and maintainable
+                  architecture. I aim to transform ideas into fast, accessible,
+                  and conversion-driven products that create measurable business
+                  impact.
+                </p>
+              </div>
             </div>
           </div>
         </div>
