@@ -202,3 +202,7 @@ html {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #da8161;
 }
+.bg-services-dotted{
+  background-image: url("../../public/assets/images/banner/dottedlines.svg");
+  background-repeat: repeat;
+}
