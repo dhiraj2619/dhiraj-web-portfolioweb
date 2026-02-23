@@ -119,6 +119,7 @@ const Services = () => {
   return (
     <section
       ref={sectionRef}
+      id="services"
       className="bg-services-dotted relative h-screen overflow-hidden pt-20"
     >
       <div className="max-w-8xl mx-auto px-2 md:px-6">
