@@ -8,16 +8,25 @@ import "swiper/css";
 const skills = [
   { id: 1, name: "HTML", skillImg: "/assets/images/icons/html.svg" },
   { id: 2, name: "CSS", skillImg: "/assets/images/icons/css.svg" },
-  { id: 3, name: "JavaScript", skillImg: "/assets/images/icons/javascript.svg" },
+  {
+    id: 3,
+    name: "JavaScript",
+    skillImg: "/assets/images/icons/javascript.svg",
+  },
   { id: 4, name: "Node.js", skillImg: "/assets/images/icons/node-js.svg" },
   { id: 5, name: "React", skillImg: "/assets/images/icons/react.svg" },
   { id: 6, name: "WordPress", skillImg: "/assets/images/icons/wordpress.svg" },
   { id: 7, name: "MongoDB", skillImg: "/assets/images/icons/mongodb.svg" },
   { id: 8, name: "MySQL", skillImg: "/assets/images/icons/mysql.svg" },
-  { id: 9, name: "Next.js", abbr: "NX" },
-  { id: 10, name: "Git", abbr: "GIT" },
-  { id: 11, name: "Figma", abbr: "FG" },
-  { id: 12, name: "React Native", skillImg: "/assets/images/icons/react.svg", abbr: "RN" },
+  { id: 9, name: "Next.js", skillImg: "/assets/images/icons/nextjs.svg" },
+  { id: 10, name: "Git", skillImg: "/assets/images/icons/git.svg" },
+  { id: 11, name: "Figma", skillImg: "/assets/images/icons/figma.svg" },
+  {
+    id: 12,
+    name: "React Native",
+    skillImg: "/assets/images/icons/react.svg",
+    abbr: "RN",
+  },
 ];
 
 const SkillsSection = () => {
@@ -47,7 +56,7 @@ const SkillsSection = () => {
       >
         {skills.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-white p-4 md:p-6 h-[120px] md:h-[145px] w-full flex flex-col justify-center items-center rounded-2xl border border-[#ececec]">
+            <div className="skillcard p-4 md:p-6 h-[120px] md:h-[145px] w-full flex flex-col justify-center items-center rounded-2xl border border-[#ececec]">
               {item.skillImg ? (
                 <img
                   src={item.skillImg}

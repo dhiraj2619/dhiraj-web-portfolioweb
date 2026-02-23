@@ -7,8 +7,10 @@ import Services from "./components/services/Services";
 import HeroSkillsReveal from "./components/skills/HeroSkillsReveal";
 import SkillsSection from "./components/skills/SkillsSection";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Projects from "./components/projects/Projects";
 
-gsap.registerPlugin("ScrollTrigger");
+gsap.registerPlugin(ScrollTrigger);
 
 const PortfolioPage = () => {
   const pageRef = useRef(null);
@@ -16,13 +18,13 @@ const PortfolioPage = () => {
 
   useEffect(() => {
     gsap.to(pageRef.current, {
-      backgroundColor: "#000000",
+      background: "linear-gradient(-70deg, #202020, #000000)",
       ease: "none",
       scrollTrigger: {
         trigger: servicesRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
+        start: "top 30%",
+        end: "+=220",
+        scrub: 0.2,
       },
     });
   }, []);
@@ -32,12 +34,12 @@ const PortfolioPage = () => {
       <PreLoader />
       <Navbar />
 
-      <main>
+      <main ref={pageRef} className="min-h-screen">
         <HeroSkillsReveal />
         <SkillsSection />
-
         <div ref={servicesRef}>
           <Services />
+          <Projects />
         </div>
       </main>
     </>

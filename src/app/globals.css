@@ -202,7 +202,25 @@ html {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #da8161;
 }
-.bg-services-dotted{
+.bg-services-dotted {
   background-image: url("../../public/assets/images/banner/dottedlines.svg");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.skillcard {
+  background: rgba(225, 225, 225, 0.1);
+  backdrop-filter: blur(35px);
+  border: 2px solid rgba(247, 245, 245, 0.341);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+.scard {
+  min-height: 260px;
+  width: 420px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(35px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+  padding: 10px 10px 10px 10px;
+  overflow: hidden;
 }
