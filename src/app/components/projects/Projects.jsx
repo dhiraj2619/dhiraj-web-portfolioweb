@@ -1,30 +1,8 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import React, { useLayoutEffect, useRef } from "react";
-
-const projects = [
-  {
-    title: "Brand and Beeyond",
-    description:
-      "Branding agency website focused on identity, digital presence, and growth.",
-    image: "/assets/images/projects/brandandbeeyond.png",
-    tone: "from-zinc-900 via-zinc-800 to-black",
-  },
-  {
-    title: "Touchwood Bliss Membership App",
-    description:
-      "Built in React Native to manage and book memberships for Touchwood Bliss resort.",
-    image: "/assets/images/projects/membershipapp.png",
-    tone: "from-zinc-950 via-zinc-900 to-black",
-  },
-  {
-    title: "Fairytale Weddings Website",
-    description:
-      "Wedding website created for Touchwood Bliss to showcase events and services.",
-    image: "/assets/images/projects/fairytale.png",
-    tone: "from-zinc-900 via-black to-zinc-900",
-  },
-];
+import { projects } from "../../data/projectsData";
 
 const Projects = ({
   eyebrow = "Featured Work",
@@ -90,7 +68,7 @@ const Projects = ({
     >
       <div className="mx-auto h-full max-w-6xl">
         <div className="mb-10 md:mb-14 text-center">
-          <p className="text-zinc-400 uppercase tracking-[0.2em] text-xs md:text-sm">
+          <p className="text-white uppercase tracking-[0.2em] text-xs md:text-sm">
             {eyebrow}
           </p>
           <h2 className="mt-4 text-white text-[30px] md:text-[40px] font-semibold">
@@ -125,12 +103,12 @@ const Projects = ({
                   </p>
                 </div>
 
-                <button
-                  type="button"
+                <Link
+                  href={`/projects/${project.slug}`}
                   className="my-4 w-fit rounded-xl border border-white/45 bg-white/20 px-5 py-2.5 text-white text-sm md:text-base shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] transition hover:bg-white/30"
                 >
                   Know More
-                </button>
+                </Link>
               </div>
             </article>
           ))}
