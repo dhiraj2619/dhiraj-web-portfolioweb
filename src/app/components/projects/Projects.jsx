@@ -14,16 +14,14 @@ const projects = [
     title: "Touchwood Bliss Membership App",
     description:
       "Built in React Native to manage and book memberships for Touchwood Bliss resort.",
-    image:
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80",
+    image: "/assets/images/projects/membershipapp.png",
     tone: "from-zinc-950 via-zinc-900 to-black",
   },
   {
     title: "Fairytale Weddings Website",
     description:
       "Wedding website created for Touchwood Bliss to showcase events and services.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
+    image: "/assets/images/projects/fairytale.png",
     tone: "from-zinc-900 via-black to-zinc-900",
   },
 ];
@@ -85,7 +83,11 @@ const Projects = ({
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen px-4 md:px-8 py-16" id="projects">
+    <section
+      ref={sectionRef}
+      className="relative h-screen px-4 md:px-8 py-16"
+      id="projects"
+    >
       <div className="mx-auto h-full max-w-6xl">
         <div className="mb-10 md:mb-14 text-center">
           <p className="text-zinc-400 uppercase tracking-[0.2em] text-xs md:text-sm">
@@ -115,13 +117,10 @@ const Projects = ({
 
               <div className="flex h-[38%] flex-col justify-between border-t border-white/25 bg-white/10 p-5 backdrop-blur-md md:p-6">
                 <div>
-                  <p className="text-zinc-400 text-xs uppercase tracking-[0.18em]">
-                    Project {String(index + 1).padStart(2, "0")}
-                  </p>
                   <h3 className="mt-2 text-white text-xl md:text-3xl leading-tight">
                     {project.title}
                   </h3>
-                  <p className="mt-3 text-zinc-100/90 text-sm md:text-base leading-relaxed">
+                  <p className="my-1 text-zinc-100/90 text-sm md:text-base leading-relaxed">
                     {project.description}
                   </p>
                 </div>

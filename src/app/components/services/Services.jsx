@@ -95,9 +95,12 @@ const Services = () => {
                   ? gsap.utils.interpolate(0.86, 1, p / 0.5)
                   : gsap.utils.interpolate(1, 0.86, (p - 0.5) / 0.5);
 
-              let alpha = 1;
-              if (p < 0.12) alpha = p / 0.12;
-              if (p > 0.88) alpha = (1 - p) / 0.12;
+              // Keep cards partially visible so adjacent cards overlap in view.
+              let alpha = 0.28;
+              if (p < 0.18) alpha = gsap.utils.interpolate(0.28, 1, p / 0.18);
+              if (p >= 0.18 && p <= 0.82) alpha = 1;
+              if (p > 0.82)
+                alpha = gsap.utils.interpolate(1, 0.28, (p - 0.82) / 0.18);
 
               gsap.set(card, {
                 x,
@@ -108,7 +111,7 @@ const Services = () => {
               });
             },
           },
-          i,
+          i * 0.58,
         );
       });
     }, sectionRef);
