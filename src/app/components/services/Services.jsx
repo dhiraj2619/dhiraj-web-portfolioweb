@@ -44,6 +44,9 @@ const Services = () => {
   const cardsRef = useRef([]);
 
   useLayoutEffect(() => {
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    if (!isDesktop) return undefined;
+
     const sectionEl = sectionRef.current;
     const cards = cardsRef.current.filter(Boolean);
 
@@ -120,39 +123,57 @@ const Services = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      id="services"
-      className="bg-services-dotted relative h-screen overflow-hidden pt-20"
-    >
-      <div className="max-w-8xl mx-auto px-2 md:px-6">
+    <section id="services" className="relative pt-12 md:pt-20">
+      <div className="max-w-8xl mx-auto px-4 md:px-6">
         <h3 className="text-white text-center text-[20px] md:text-[30px] font-brokmannsemibold my-3">
           My Services
         </h3>
       </div>
 
-      <div className="relative h-[70vh]">
-        {services.map((service, i) => (
+      <div className="mx-auto mt-7 grid max-w-6xl grid-cols-1 gap-5 px-4 pb-6 sm:grid-cols-2 md:hidden">
+        {services.map((service) => (
           <article
             key={service.title}
-            ref={(el) => {
-              cardsRef.current[i] = el;
-            }}
-            className="absolute left-1/2 top-1/2 w-[88vw] max-w-[560px] -translate-x-1/2 -translate-y-1/3 text-white  scard"
+            className="rounded-2xl border border-white/15 bg-white/10 p-3 text-white backdrop-blur-md"
           >
             <img
               src={service.thumbnail}
-              className="h-[250px] rounded-2xl w-full object-cover"
-              alt=""
+              className="h-[180px] w-full rounded-xl object-cover"
+              alt={service.title}
             />
-            <h4 className="text-xl  md:text-2xl font-brokmannsemibold mt-3">
-              {service.title}
-            </h4>
-            <p className="mt-3 text-sm md:text-base text-white/85">
-              {service.desc}
-            </p>
+            <h4 className="mt-3 text-lg font-brokmannsemibold">{service.title}</h4>
+            <p className="mt-2 text-sm text-white/85">{service.desc}</p>
           </article>
         ))}
+      </div>
+
+      <div
+        ref={sectionRef}
+        className="bg-services-dotted relative hidden h-screen overflow-hidden pt-20 md:block"
+      >
+        <div className="relative h-[70vh]">
+          {services.map((service, i) => (
+            <article
+              key={service.title}
+              ref={(el) => {
+                cardsRef.current[i] = el;
+              }}
+              className="absolute left-1/2 top-1/2 w-[88vw] max-w-[560px] -translate-x-1/2 -translate-y-1/3 text-white scard"
+            >
+              <img
+                src={service.thumbnail}
+                className="h-[250px] rounded-2xl w-full object-cover"
+                alt={service.title}
+              />
+              <h4 className="text-xl md:text-2xl font-brokmannsemibold mt-3">
+                {service.title}
+              </h4>
+              <p className="mt-3 text-sm md:text-base text-white/85">
+                {service.desc}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

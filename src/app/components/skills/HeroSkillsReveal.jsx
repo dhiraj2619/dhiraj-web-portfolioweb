@@ -69,20 +69,20 @@ const HeroSkillsReveal = () => {
             transform: `translateY(${skillsPullDown}px)`,
           }}
         >
-          <div className="max-w-8xl mx-auto px-6 mt-5" id="about">
+          <div className="max-w-8xl mx-auto px-4 md:px-6 mt-5" id="about">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               <div className="lg:col-span-4">
-                <span className="text-[#4a4a4a] capitalize text-[16px]">
+                <span className="text-[#4a4a4a] capitalize text-[14px] md:text-[16px]">
                   From vision to execution to results, I build products that
                   perform.
                 </span>
 
-                <h2 className="text-[#000] text-[96px] leading-[90px] font-brokmannsemibold my-5">
+                <h2 className="text-[#000] text-[44px] leading-[0.95] sm:text-[60px] md:text-[74px] lg:text-[96px] lg:leading-[90px] font-brokmannsemibold my-4 md:my-5">
                   About <br /> <span className="stroke-heading">Me</span> 
                 </h2>
               </div>
               <div className="lg:col-span-8">
-                <p className="text-[#1f1f1f] text-[18px] leading-[32px] max-w-[980px]">
+                <p className="text-[#1f1f1f] text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[32px] max-w-[980px]">
                   I am Dhiraj R. Bhirud, a software developer focused on
                   building scalable UI interfaces and modern user experiences.
                   With 3+ years of experience in the IT industry, I combine
@@ -90,7 +90,7 @@ const HeroSkillsReveal = () => {
                   deliver reliable digital solutions.
                 </p>
 
-                <p className="text-[#1f1f1f] text-[18px] leading-[32px] max-w-[980px] mt-5">
+                <p className="text-[#1f1f1f] text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[32px] max-w-[980px] mt-4 md:mt-5">
                   My core focus areas are modern web technologies, performance
                   optimization, responsive design systems, and maintainable
                   architecture. I aim to transform ideas into fast, accessible,

@@ -3,22 +3,22 @@ import React from "react";
 const Contact = () => {
   return (
     <section className="py-15 mt-10" id="contact">
-      <div className="max-w-8xl mx-auto px-6 mt-5" id="about">
+      <div className="max-w-8xl mx-auto px-4 md:px-6 mt-5" id="about">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-4">
             <p className="text-white uppercase tracking-[0.2em] text-xs md:text-sm">
               Have a Project in Mind ?
             </p>
-            <h4 className="text-[#fff] text-[96px] leading-[90px] font-brokmannsemibold my-5">
+            <h4 className="text-[#fff] text-[44px] leading-[0.95] sm:text-[60px] md:text-[74px] lg:text-[96px] lg:leading-[90px] font-brokmannsemibold my-4 md:my-5">
               Let's<span className="stroke-heading ms-4">Talk</span>
             </h4>
           </div>
           <div className="lg:col-span-8">
-            <form className="w-full space-y-10">
+            <form className="w-full space-y-7 md:space-y-10">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-white/70 text-base md:text-lg mb-3"
+                  className="block text-white/70 text-sm sm:text-base md:text-lg mb-2 md:mb-3"
                 >
                   Your name *
                 </label>
@@ -33,7 +33,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-white/70 text-base md:text-lg mb-3"
+                  className="block text-white/70 text-sm sm:text-base md:text-lg mb-2 md:mb-3"
                 >
                   Email *
                 </label>
@@ -48,7 +48,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-white/70 text-base md:text-lg mb-3"
+                  className="block text-white/70 text-sm sm:text-base md:text-lg mb-2 md:mb-3"
                 >
                   Your message *
                 </label>
@@ -62,7 +62,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="inline-flex items-center rounded-full border border-white px-7 py-2 text-white text-base hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
+                className="inline-flex items-center rounded-full border border-white px-6 md:px-7 py-2 text-white text-sm sm:text-base hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
               >
                 Send
               </button>

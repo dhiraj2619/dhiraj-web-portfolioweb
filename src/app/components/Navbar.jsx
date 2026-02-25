@@ -56,7 +56,7 @@ const Navbar = () => {
       <nav className="relative z-40 mx-auto flex h-[74px] max-w-[1900px] items-center justify-between px-4 font-brokmannlight md:px-8">
         <a
           href="#"
-          className="mr-10 text-[38px] font-black leading-none tracking-tight"
+          className="mr-10 text-[30px] sm:text-[34px] md:text-[38px] font-black leading-none tracking-tight"
         >
           Dhiraj<span className="text-[#d9a100]">.</span>
         </a>
@@ -77,13 +77,13 @@ const Navbar = () => {
                 transform: isMenuOpen ? "translateY(-10px)" : "translateY(0px)",
               }}
             >
-              <a
-                href={item.reachToSec}
-                onClick={(event) => handleNavClick(event, item.reachToSec)}
-                className="text-[16px] font-medium leading-none tracking-tight text-black"
-              >
-                {item.linkName}
-              </a>
+                <a
+                  href={item.reachToSec}
+                  onClick={(event) => handleNavClick(event, item.reachToSec)}
+                  className="text-[15px] md:text-[16px] font-medium leading-none tracking-tight text-black"
+                >
+                  {item.linkName}
+                </a>
             </li>
           ))}
         </ul>
@@ -138,7 +138,7 @@ const Navbar = () => {
                   onClick={(event) =>
                     handleNavClick(event, item.reachToSec, true)
                   }
-                  className="text-[45px] py-5 font-semibold font-brokmannlight leading-[0.95] tracking-tight text-black sm:text-[64px] md:text-[60px]"
+                  className="text-[38px] py-4 md:py-5 font-semibold font-brokmannlight leading-[0.95] tracking-tight text-black sm:text-[50px] md:text-[60px]"
                 >
                   {item.linkName}
                 </a>
@@ -156,17 +156,17 @@ const Navbar = () => {
             }}
           >
             <div>
-              <p className="text-[24px] font-medium leading-none">
+              <p className="text-[18px] sm:text-[21px] md:text-[24px] font-medium leading-none">
                 +91-8421438615
               </p>
               <a
                 href="mailto:dhirajbhirud2699@gmail.com"
-                className="mt-3 inline-block text-[30px] font-semibold leading-none tracking-tight"
+                className="mt-3 inline-block text-[20px] sm:text-[24px] md:text-[30px] font-semibold leading-none tracking-tight"
               >
                 dhirajbhirud2699@gmail.com
               </a>
             </div>
-            <p className="text-[30px] font-medium leading-none">
+            <p className="text-[18px] sm:text-[22px] md:text-[30px] font-medium leading-none">
               @2026 Dhiraj Portfolio
             </p>
           </div>

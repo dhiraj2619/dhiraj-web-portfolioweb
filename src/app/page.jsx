@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,9 +42,10 @@ const PortfolioPage = () => {
         <div ref={servicesRef}>
           <Services />
           <Projects />
-          <Contact/>
+          <Contact />
         </div>
       </main>
+      <Footer />
     </>
   );
 };
