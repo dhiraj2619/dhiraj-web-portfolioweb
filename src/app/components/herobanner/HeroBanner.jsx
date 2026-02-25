@@ -22,8 +22,8 @@ const HeroBanner = ({ className = "", style }) => {
           focused on performance, scalability, and modern user experience.
         </p>
 
-        <a
-          href=""
+        <a target="_blank"
+          href="https://calendly.com/dhirajbhirud2699/30min?month=2026-02"
           className="bg-[#dc7550] font-bold text-[#ffffff] text-[15px] sm:text-[17px] md:text-[19px] py-3 md:py-4 px-5 md:px-6 mt-8 md:mt-10 rounded-[50px] relative z-10 gettingstarted"
         >
           <span>Tell us about your project</span>
